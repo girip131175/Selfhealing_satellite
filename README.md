@@ -1,11 +1,12 @@
 # Generative AI-Driven Self-Healing and Adaptive Spectrum Management for Resilient Satellite Communications
 
-> **Best Paper Award** — a unified Generative AI-driven framework integrating adaptive spectrum management, satellite damage detection and restoration, self-healing strategy selection, and LLM-based decision support for resilient satellite communications.
+> **Best Paper Award** — a unified AI-driven framework integrating adaptive spectrum management, satellite damage detection and restoration, self-healing strategy selection, and LLM-based decision support for resilient satellite communications.
 
-[![Research](https://img.shields.io/badge/type-research-blue)](#)
-[![Satellite Communications](https://img.shields.io/badge/domain-satellite%20communications-1f6feb)](#)
-[![Generative AI](https://img.shields.io/badge/AI-Generative%20AI-purple)](#)
-[![Deep Learning](https://img.shields.io/badge/models-CNN%20%7C%20Transformer%20%7C%20GAN-orange)](#)
+[![Research Prototype](https://img.shields.io/badge/type-research%20prototype-blue)](#)
+[![Satellite Resilience](https://img.shields.io/badge/domain-satellite%20resilience-1f6feb)](#)
+[![Autonomous Self-Healing](https://img.shields.io/badge/capability-autonomous%20self--healing-6f42c1)](#)
+[![Adaptive Spectrum Management](https://img.shields.io/badge/capability-adaptive%20spectrum%20management-orange)](#)
+[![AI Methods](https://img.shields.io/badge/methods-CNN%20%7C%20Transformer%20%7C%20GAN%20%7C%20PPO-purple)](#)
 [![Status](https://img.shields.io/badge/status-research%20prototype-informational)](#)
 
 ## Overview
@@ -153,4 +154,4 @@ A formal citation block will be added once the publication record/DOI is availab
 
 ## Author
 
-**Pullela Giridhar** - cybersecurity and AI-security researcher.
+**Pullela Giridhar** — cybersecurity and AI-security researcher.
