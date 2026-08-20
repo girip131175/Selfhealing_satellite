@@ -6,8 +6,7 @@
 [![Satellite Resilience](https://img.shields.io/badge/domain-satellite%20resilience-1f6feb)](#)
 [![Autonomous Self-Healing](https://img.shields.io/badge/capability-autonomous%20self--healing-6f42c1)](#)
 [![Adaptive Spectrum Management](https://img.shields.io/badge/capability-adaptive%20spectrum%20management-orange)](#)
-[![AI Methods](https://img.shields.io/badge/methods-CNN%20%7C%20Transformer%20%7C%20GAN%20%7C%20PPO-purple)](#)
-[![Status](https://img.shields.io/badge/status-research%20prototype-informational)](#)
+[![AI Methods](https://img.shields.io/badge/methods-CNN%20%7C%20ViT%20%7C%20GAN%20%7C%20PPO-purple)](#)
 
 ## Overview
 
