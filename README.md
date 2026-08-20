@@ -1,56 +1,50 @@
 # Generative AI-Driven Self-Healing and Adaptive Spectrum Management for Resilient Satellite Communications
 
-> A unified Generative AI-driven framework integrating adaptive spectrum management, satellite damage detection and restoration, self-healing strategy selection, and LLM-based decision support for resilient satellite communications.
+> **Best Paper Award** — a unified Generative AI-driven framework integrating adaptive spectrum management, satellite damage detection and restoration, self-healing strategy selection, and LLM-based decision support for resilient satellite communications.
 
-![Research](https://img.shields.io/badge/Research-Satellite%20AI-blue)
-![Generative AI](https://img.shields.io/badge/Generative%20AI-GAN-purple)
-![Deep Learning](https://img.shields.io/badge/Deep%20Learning-CNN%20%7C%20Transformer-orange)
-![Self Healing](https://img.shields.io/badge/System-Self--Healing-green)
+[![Research](https://img.shields.io/badge/type-research-blue)](#)
+[![Satellite Communications](https://img.shields.io/badge/domain-satellite%20communications-1f6feb)](#)
+[![Generative AI](https://img.shields.io/badge/AI-Generative%20AI-purple)](#)
+[![Deep Learning](https://img.shields.io/badge/models-CNN%20%7C%20Transformer%20%7C%20GAN-orange)](#)
+[![Status](https://img.shields.io/badge/status-research%20prototype-informational)](#)
 
 ## Overview
 
-Satellite communication systems can experience spectrum congestion, interference, and structural degradation caused by radiation, thermal cycling, and mechanical stress. This project proposes a unified AI framework for maintaining communication performance while supporting autonomous satellite recovery.
+Satellite communication systems can experience spectrum congestion, interference, and structural degradation caused by radiation, thermal cycling, mechanical stress, and component failure. This project develops a unified AI-driven framework that addresses **adaptive spectrum management and autonomous satellite self-healing within a single research pipeline**.
 
-The framework operates across two tightly connected domains:
-
-1. **Adaptive Spectrum Management** — synthetic future spectrum-demand and interference data generation, demand prediction, interference classification, and adaptive spectrum allocation under constrained availability.
-2. **Satellite Self-Healing** — damage detection, damage classification, damaged-region restoration, and mapping from detected damage to appropriate healing strategies.
-
-A pair of GPT-2-based language models provides natural-language decision support for spectrum and repair analysis.
+The framework combines synthetic spectrum/interference generation, demand prediction, interference classification, satellite damage detection, damage restoration, damage-to-healing strategy mapping, and LLM-based decision support. The work was validated in a simulated environment using synthetic datasets and Blender-generated satellite imagery.
 
 ## System Architecture
 
 ```text
-                         SATELLITE COMMUNICATIONS
-                                   │
-              ┌────────────────────┴────────────────────┐
-              │                                         │
-              ▼                                         ▼
-    ADAPTIVE SPECTRUM MANAGEMENT               SELF-HEALING PIPELINE
-              │                                         │
-        TimeGAN / GAN                              Damage Data
-              │                                         │
-              ▼                                         ▼
-   Spectrum Demand + Interference          Damage Detection / Classification
-              │                                         │
-      ┌───────┴────────┐                   CNN + Vision Transformer
-      │                │                              │
-      ▼                ▼                              ▼
-     CNN              LSTM                    Edge-Connect GAN
-      │                │                              │
-      └───────┬────────┘                              ▼
-              ▼                              Damage Restoration
-      Demand Prediction                              │
-              │                                      ▼
-              ▼                              Damage-to-Healing
-       Spectrum Allocation                         Mapping
-              │                                      │
-              └──────────────────┬───────────────────┘
-                                 ▼
-                       GPT-2 Decision Support
-                                 │
-                                 ▼
-                  Reports / Recommendations / Actions
+                         SATELLITE RESILIENCE FRAMEWORK
+                                      │
+                 ┌────────────────────┴────────────────────┐
+                 │                                         │
+       ADAPTIVE SPECTRUM MANAGEMENT              SELF-HEALING PIPELINE
+                 │                                         │
+             TimeGAN                                Blender simulation
+                 ↓                                         ↓
+      Spectrum demand +                       Normal / damaged imagery
+      interference synthesis                            ↓
+                 ↓                                Damage detection
+       CNN / LSTM / PPO                                 ↓
+                 ↓                            CNN + Vision Transformer
+       Demand prediction +                              ↓
+      interference classification                 Damage classification
+                 ↓                                         ↓
+        Spectrum allocation                      Edge-Connect GAN
+                 │                                         ↓
+                 │                                Damage restoration
+                 │                                         ↓
+                 │                              Damage → healing map
+                 │                                         ↓
+                 └────────────────────┬────────────────────┘
+                                      ↓
+                             GPT-2 DECISION SUPPORT
+                                      ↓
+                    Spectrum insights / diagnostic reports /
+                         repair recommendations
 ```
 
 ## Adaptive Spectrum Management
@@ -59,9 +53,9 @@ The spectrum-management pipeline addresses limited real-world spectrum datasets 
 
 ### Synthetic data generation
 
-A TimeGAN-based framework is used to generate synthetic spectrum-demand and interference sequences while preserving temporal dependencies.
+A **TimeGAN-based framework** is used to generate synthetic spectrum-demand and interference sequences while preserving temporal dependencies. The paper describes an architecture combining GRU networks with GAN principles through embedding, recovery, generator, discriminator, and supervisor components.
 
-### Demand prediction
+### Demand prediction and allocation
 
 The study compares several approaches, including GAN-based generation, PPO, LSTM, and CNN-based prediction. The reported experiments identify the CNN model as the strongest performer among the tested spectrum-prediction approaches.
 
@@ -103,6 +97,8 @@ A feed-forward network maps classified damage modes to corresponding simulated s
 - AI-directed cold welding
 - AI-directed thermal-shock repair
 
+These are **simulated strategy mappings in the research framework**, not claims of a deployed physical repair system.
+
 ## LLM Decision Support
 
 Two GPT-2-based language models are integrated as a decision-support layer:
@@ -114,7 +110,7 @@ The LLM layer is intended to improve interpretability and human-in-the-loop deci
 
 ## Reported Results
 
-The following values are **reported by the accompanying research paper** and are presented here as publication results, not as a claim of fresh reproduction from this repository.
+The following values are **reported by the accompanying research paper** and are presented here as paper-reported results, not as fresh reproduction benchmarks:
 
 | Component | Reported result |
 |---|---:|
@@ -126,7 +122,7 @@ The following values are **reported by the accompanying research paper** and are
 | CNN + Transformer recall | **99.60%** |
 | Damage-to-healing mapping | **95% correct over 100 simulated scenarios** |
 
-The paper also reports spectrum-allocation evaluation across 50–100% availability, with accuracy remaining approximately 0.77–0.79 across the tested scenarios.
+The paper also reports spectrum-allocation evaluation across 50–100% availability. At 50%, 60%, 70%, 80%, 90%, and 100% availability, the reported accuracy values were 0.787, 0.788, 0.778, 0.771, 0.770, and 0.770 respectively; utilization was 1.124, 0.937, 0.803, 0.703, 0.625, and 0.562 respectively.
 
 ## Key Research Characteristics
 
@@ -141,7 +137,7 @@ The paper also reports spectrum-allocation evaluation across 50–100% availabil
 
 ## Experimental Scope and Limitations
 
-The current framework is validated using **synthetic data and Blender-based simulation**, rather than live satellite telemetry or operational spacecraft hardware. The research identifies future validation using public ESA/NASA datasets and further optimization for radiation-hardened deployment.
+The current framework is validated using **synthetic data and Blender-based simulation**, rather than live satellite telemetry or operational spacecraft hardware. The paper identifies future validation using public ESA/NASA datasets and further optimization for radiation-hardened deployment.
 
 This distinction is intentionally preserved so the repository does not imply operational deployment that the current research does not establish.
 
@@ -149,7 +145,7 @@ This distinction is intentionally preserved so the repository does not imply ope
 
 This project currently **does not have a DOI/publication record attached to this repository**.
 
-The work received the **Best Paper Award** at the relevant presentation/venue. Publication metadata will be added here once a formal publication record or DOI is available.
+The work received the **Best Paper Award**. Publication metadata will be added here once a formal publication record or DOI is available.
 
 ## Citation
 
