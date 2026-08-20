@@ -1,6 +1,6 @@
 # Generative AI-Driven Self-Healing and Adaptive Spectrum Management for Resilient Satellite Communications
 
-> **Best Paper Award** — a unified AI-driven framework integrating adaptive spectrum management, satellite damage detection and restoration, self-healing strategy selection, and LLM-based decision support for resilient satellite communications.
+> **Best Paper Award** - a unified AI-driven framework integrating adaptive spectrum management, satellite damage detection and restoration, self-healing strategy selection, and LLM-based decision support for resilient satellite communications.
 
 [![Research Prototype](https://img.shields.io/badge/type-research%20prototype-blue)](#)
 [![Satellite Resilience](https://img.shields.io/badge/domain-satellite%20resilience-1f6feb)](#)
