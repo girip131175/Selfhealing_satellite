@@ -17,35 +17,64 @@ The framework combines synthetic spectrum/interference generation, demand predic
 
 ## System Architecture
 
-```text
-                         SATELLITE RESILIENCE FRAMEWORK
-                                      │
-                 ┌────────────────────┴────────────────────┐
-                 │                                         │
-       ADAPTIVE SPECTRUM MANAGEMENT              SELF-HEALING PIPELINE
-                 │                                         │
-             TimeGAN                                Blender simulation
-                 ↓                                         ↓
-      Spectrum demand +                       Normal / damaged imagery
-      interference synthesis                            ↓
-                 ↓                                Damage detection
-       CNN / LSTM / PPO                                 ↓
-                 ↓                            CNN + Vision Transformer
-       Demand prediction +                              ↓
-      interference classification                 Damage classification
-                 ↓                                         ↓
-        Spectrum allocation                      Edge-Connect GAN
-                 │                                         ↓
-                 │                                Damage restoration
-                 │                                         ↓
-                 │                              Damage → healing map
-                 │                                         ↓
-                 └────────────────────┬────────────────────┘
-                                      ↓
-                             GPT-2 DECISION SUPPORT
-                                      ↓
-                    Spectrum insights / diagnostic reports /
-                         repair recommendations
+```mermaid
+flowchart TB
+
+    A["Satellite Operating Conditions<br/>Spectrum Congestion • Interference • Structural Damage"]
+
+    A --> S1
+    A --> H1
+
+    subgraph S["ADAPTIVE SPECTRUM MANAGEMENT"]
+        direction TB
+        S1["Synthetic Spectrum & Interference Generation<br/><br/>TimeGAN"]
+        S1 --> S2["Spectrum Demand Prediction"]
+        S1 --> S3["Interference Classification"]
+        S2 --> S4["CNN / LSTM / PPO<br/>Comparative Modeling"]
+        S3 --> S5["Interference-Aware Spectrum Analysis"]
+        S4 --> S6["Adaptive Spectrum Allocation"]
+        S5 --> S6
+    end
+
+    subgraph H["AUTONOMOUS SATELLITE SELF-HEALING"]
+        direction TB
+        H1["Blender-Based Satellite<br/>Damage Simulation"]
+        H1 --> H2["Normal / Damaged<br/>Satellite Imagery"]
+        H2 --> H3["Damage Detection & Classification<br/><br/>CNN + Vision Transformer"]
+        H3 --> H4["Damage Restoration<br/><br/>Edge-Connect GAN"]
+        H3 --> H5["Damage-to-Healing<br/>Strategy Mapping"]
+        H5 --> H6["Simulated Healing Strategies"]
+        H4 --> H7["Restored Satellite<br/>Representation"]
+    end
+
+    S6 --> D
+    H3 --> D
+    H5 --> D
+    H7 --> D
+
+    D["LLM-BASED DECISION SUPPORT<br/><br/>GPT-2"]
+    D --> O1["Spectrum Insights"]
+    D --> O2["Diagnostic Reports"]
+    D --> O3["Repair Recommendations"]
+    D --> O4["Human-in-the-Loop<br/>Decision Support"]
+
+    O1 --> F
+    O2 --> F
+    O3 --> F
+    O4 --> F
+    F["RESILIENT SATELLITE OPERATIONS"]
+
+    classDef input fill:#0f172a,color:#ffffff,stroke:#334155,stroke-width:2px;
+    classDef spectrum fill:#eff6ff,color:#0f172a,stroke:#2563eb,stroke-width:2px;
+    classDef healing fill:#f5f3ff,color:#0f172a,stroke:#7c3aed,stroke-width:2px;
+    classDef decision fill:#fff7ed,color:#0f172a,stroke:#ea580c,stroke-width:2px;
+    classDef output fill:#ecfdf5,color:#0f172a,stroke:#059669,stroke-width:2px;
+
+    class A input;
+    class S1,S2,S3,S4,S5,S6 spectrum;
+    class H1,H2,H3,H4,H5,H6,H7 healing;
+    class D,O1,O2,O3,O4 decision;
+    class F output;
 ```
 
 ## Adaptive Spectrum Management
