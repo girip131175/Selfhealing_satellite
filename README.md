@@ -153,4 +153,4 @@ A formal citation block will be added once the publication record/DOI is availab
 
 ## Author
 
-**Pullela Giridhar** — cybersecurity and AI-security researcher.
+**Pullela Giridhar** - cybersecurity and AI-security researcher.
