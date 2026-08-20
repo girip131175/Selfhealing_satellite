@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+env/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# Data and generated artifacts
+*.csv
+*.parquet
+*.pkl
+*.pickle
+*.npy
+*.npz
+*.h5
+*.keras
+*.pth
+*.pt
+*.bin
+*.ckpt
+checkpoints/
+models/
+outputs/
+results/generated/
+
+# Local secrets/config
+.env
+*.local.json
+
+# OS
+.DS_Store
+Thumbs.db
